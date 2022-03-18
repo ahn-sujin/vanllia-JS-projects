@@ -593,6 +593,12 @@ input[type= 'number']:focus {
 	font-weight: 700;
 }
 
+button:disabled{
+    color: #fff;
+	background:#9D9CA7;
+	border: 1px solid #9D9CA7;
+}
+
 
 /* ============ form_wrap_line ============ */
 .form_wrap_line .form-group {

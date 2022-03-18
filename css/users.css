@@ -1,5 +1,54 @@
 @charset "utf-8";
 
+/* ============================ 로그인 ============================ */
+.login_top{
+    margin-top: 30px;
+}
+.login_contents .login_utile {
+	display: flex;
+	margin-top: 30px;
+	align-items: center;
+}
+.login_contents .login_utile .check_area {
+	margin: 0;
+    margin-right: 10px;
+}
+.login_contents .login_utile .find_area {
+	display: inline-block;
+	font-weight: 500;
+	font-size: 1.3rem;
+	color: #959595;
+}
+
+.login_contents .login_top .btn-group {
+	margin-top: 22px;
+}
+.form-group input::placeholder {
+    font-size: 14px;
+}
+.login_contents .btn-login-util {
+    text-align: center;
+    margin-top: 40px;
+}
+.login_contents .btn-login-util > button:after {
+    content: '';
+    display: inline-block;
+    margin: 2px 11px 0 15px;
+    width: 1px;
+    height: 15px;
+    background:#9D9CA7 ;
+    vertical-align: top;
+}
+.login_contents .btn-login-util > button:last-of-type:after {
+    display: none;
+}
+.login_caution {
+    color: #E15242;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+
 /* ============================ 회원가입 ============================ */
 .join_contents{
 	position: relative;

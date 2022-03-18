@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/layout.css"> 
+    <link rel="stylesheet" href="../css/users.css">  
+    <title>로그인</title>
+</head>
+<body>
+    <section class="contents login_contents">
+        <div class="container">
+            <div class="form_wrap_line login_top">
+                <div class="form-group">
+                    <input type="text" id="user_id" class="form-control line" placeholder="아이디를 입력해주세요" title="아이디">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="user_pw" class="form-control line" placeholder="비밀번호를 입력해주세요" title="비밀번호">
+                </div>
+                <!-- <p class="login_caution">아이디 또는 비밀번호가 일치하지 않아요</p> -->
+                <!-- <div class="login_utile">
+                    <div class="check_area">
+                        <input type="checkbox" id="auto_login">
+                        <label for="auto_login">자동로그인</label>
+                    </div>
+                    <div class="check_area">
+                        <input type="checkbox" id="id_save">
+                        <label for="id_save">아이디 저장</label>
+                    </div>
+                </div> -->
+                <div class="btn-group">
+                    <button type="button" id="btn_login" class="btn btn_lg btn_primary" disabled>로그인</button>
+                </div>
+                <div class="btn-login-util">
+                    <button type="button" class="btn_join">회원가입</button>
+                    <button type="button" class="btn_find_id">아이디 찾기</button>
+                    <button type="button" class="btn_find_pw">비밀번호 찾기</button>
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- script -->
+    <script src="../js/common.js"></script>
+</body>
+</html>
