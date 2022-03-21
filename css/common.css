@@ -41,6 +41,7 @@ table { width: 100%; border-collapse: collapse; border-spacing: 0; }
 caption, legend{ font-size: 0; line-height: 0; width: 0; height:0; padding: 0; text-indent: -9999px; overflow: hidden; }
 
 .caution{
+	display: none;
     color: #E15242;
     font-size: 12px;
     margin-top: 5px;
@@ -70,7 +71,9 @@ input.form-control {
 	padding: 0 10px;
 	height: 40px;
 	background-color: #fff;
-	border-bottom: 1px solid #D8DAE8 !important;
+}
+#user_id{
+	border-bottom: 1px solid #D8DAE8;
 }
 
 button {
@@ -166,8 +169,12 @@ button:disabled{
 	transform: translate(-50%, -50%);
 	width: calc(100% - 100px);
 }
-
-.form-group-wrap {
-	border: solid #D8DAE8;
-	border-width: 1px 1px 0 1px;
+.form_wrap_line .form-group-wrap {
+	border:1px solid #D8DAE8;
+}
+.form_wrap_line.error .form-group-wrap{
+	border: 1px solid #E15242;
+}
+.form_wrap_line.error .caution{
+	display: block;
 }
