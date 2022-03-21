@@ -29,10 +29,12 @@ const loginButton = document.querySelector('#btn_login');
 // ========================
 // 2. 두번째 방법
 // - 비밀번호 입력 칸을 기준으로 입력이 되었을 때, 이벤트를 준다.
-// - 코드는 간단해 지지만, 활성화된 버튼이 다시 비활성화로 돌아가지 않는다.
+// - 코드는 간단해 지지만, 비밀번호 입력 칸을 기준으로 하여 문제 발생
+// -- id 값이 지워졌을 때 버튼이 비활성화되지 않음
+// -- pw 값이 먼저 입력하고 id 입력하면 버튼이 활성화되지 않음
 // ========================
 // const pushValue = () =>{
-//     pwForm.addEventListener('keypress' , () =>{
+//     pwForm.addEventListener('keyup' , () =>{
 //         if(idForm.value && pwForm.value){
 //             loginButton.disabled = false;
 //         } else {
