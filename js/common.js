@@ -1,3 +1,4 @@
+const formWrap = document.querySelector('.form_wrap_line');
 const idForm = document.querySelector('#user_id');
 const pwForm = document.querySelector('#user_pw');
 const loginButton = document.querySelector('#btn_login');
@@ -48,10 +49,15 @@ const loginButton = document.querySelector('#btn_login');
 // ========================
 idForm.addEventListener('keyup', activeEvent);
 pwForm.addEventListener('keyup', activeEvent);
+loginButton.addEventListener('click', errorEvent);
 
 function activeEvent() {
     switch (!(idForm.value && pwForm.value)) {
         case true : loginButton.disabled = true; break;
         case false : loginButton.disabled = false; break;
     }
+}
+
+function errorEvent() { // 이건 그냥 error 문구 출력해보려고 만들어봄.
+    formWrap.classList.add('error');
 }
