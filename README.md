@@ -136,3 +136,8 @@ function errorEvent() { // 이건 그냥 error 문구 출력해보려고 만들�
 
 #### 참고 
 https://velog.io/@rain98/TIL-id-pw-%EC%9E%85%EB%A0%A5-%EC%8B%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B2%84%ED%8A%BC-%ED%99%9C%EC%84%B1%ED%99%94-%EA%B8%B0%EB%8A%A5
+
+
+https://velog.io/@najiexx/javascript-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B2%84%ED%8A%BC-%ED%99%9C%EC%84%B1%ED%99%94
+
+https://cocoon1787.tistory.com/700
