@@ -46,6 +46,10 @@
     color: #E15242;
     font-size: 12px;
     margin-top: 15px;
+    display: none;
+}
+.form_wrap_line.error .login_caution{
+    display: block;
 }
 
 
