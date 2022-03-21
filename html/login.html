@@ -14,11 +14,13 @@
         <div class="container">
             <!-- 유효성 검사 form_wrap_line 에 error 추가 -->
             <div class="form_wrap_line login_top">
-                <div class="form-group">
-                    <input type="text" id="user_id" class="form-control line" placeholder="아이디를 입력해주세요" title="아이디">
-                </div>
-                <div class="form-group">
-                    <input type="password" id="user_pw" class="form-control line" placeholder="비밀번호를 입력해주세요" title="비밀번호">
+                <div class="form-group-wrap">
+                    <div class="form-group">
+                        <input type="text" id="user_id" class="form-control box" placeholder="아이디" title="아이디">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="user_pw" class="form-control box" placeholder="비밀번호" title="비밀번호">
+                    </div>
                 </div>
                 <p class="login_caution">아이디 또는 비밀번호가 일치하지 않아요</p>
                 <!-- <div class="login_utile">
@@ -34,12 +36,10 @@
                 <div class="btn-group">
                     <button type="button" id="btn_login" class="btn btn_lg btn_primary" disabled>로그인</button>
                 </div>
-                <div class="btn-login-util">
-                    <button type="button" class="btn_join">회원가입</button>
-                    <button type="button" class="btn_find_id">아이디 찾기</button>
-                    <button type="button" class="btn_find_pw">비밀번호 찾기</button>
-                </div>
-            
+            </div>
+            <div class="btn-login-util">
+                <button type="button" class="btn_find_id">카카오계정 찾기</button>
+                <button type="button" class="btn_find_pw">비밀번호 재설정</button>
             </div>
         </div>
     </section>

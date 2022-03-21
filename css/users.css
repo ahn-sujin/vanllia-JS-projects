@@ -2,7 +2,11 @@
 
 /* ============================ 로그인 ============================ */
 .login_top{
-    margin-top: 30px;
+    margin-top: 20px;
+}
+.login_contents {
+    background: #ffe800 url(../img/kakaotalk-logo-card-2018.png) no-repeat center 112px;
+    background-size: 330px auto;
 }
 .login_contents .login_utile {
 	display: flex;
@@ -21,14 +25,21 @@
 }
 
 .login_contents .login_top .btn-group {
-	margin-top: 22px;
+	margin-top: 10px;
 }
 .form-group input::placeholder {
-    font-size: 14px;
+    font-size: 12px;
 }
 .login_contents .btn-login-util {
     text-align: center;
-    margin-top: 40px;
+   position: absolute;
+   left: 50%;
+   bottom: 50px;
+   width: 100%;
+   transform: translateX(-50%);
+}
+.login_contents .btn-login-util > button {
+    color: #777;
 }
 .login_contents .btn-login-util > button:after {
     content: '';
@@ -50,91 +61,4 @@
 }
 .form_wrap_line.error .login_caution{
     display: block;
-}
-
-
-/* ============================ 회원가입 ============================ */
-.join_contents{
-	position: relative;
-}
-.join_wrap {
-	/* margin-top: 4rem; */
-}
-.join_wrap .join_area {
-	margin-top: 3rem;
-}
-.join_wrap .join_area.first{
-	margin-top: 0;
-}
-.join_wrap .join_area:first-child {
-	margin-top: 0;
-}
-.join_wrap .join_area .info_tit {
-	font-weight: 700;
-	font-size: 1.5rem;
-	line-height: 2.2rem;
-	color: #000;
-}
-.join_wrap .join_area .txt_area {
-	margin-top: 5px;
-}
-.join_wrap .join_area .txt_area p {
-	font-size: 1.2rem;
-	line-height: 1.8rem;
-	color: #959595;
-}
-.join_wrap .join_area .txt_area .top {
-    color: #000;
-}
-.join_wrap .join_area .txt_area .bottom {
-    color: #9D9CA7;
-}
-.join_wrap .radio_wrap {
-    justify-content: left;
-    flex-wrap: wrap;
-	margin-top: 10px;
-}
-.join_wrap .radio_wrap .radio_area {
-	margin-right: 1.3rem;
-}
-
-.join_wrap{
-	margin-top: 30px;
-}
-.join_tit {
-    font-size: 19px;
-}
-.join_tit span {
-    color: #02463A;
-    font-weight: bold;
-    line-height: 2.7rem;
-}
-.join_tit_sub {
-    margin-top: 5px;
-}
-.find_btn.join .btn{
-    background-color: #E5F9F6;
-    border-color: #E5F9F6;
-}
-.join_contents .certi_area .top {
-    width: calc(100% - 80px);
-    padding-right: 0;
-}
-.join_contents .btn_area button {color: #000;font-weight: bold;}
-.input_title {
-    width: 100%;
-}
-.btn_form {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-.btn_form input{
-    width: calc(100% - 82px);
-}
-.btn_form .btn_area {
-    margin-left: 15px;
-}
-.join_wrap .text_wrap{
-	margin: 15px 0 30px;
 }
