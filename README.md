@@ -1,2 +1,2 @@
-# projects
-프로젝트 레포지토리
+# chrome app
+크롬앱 클론코딩
