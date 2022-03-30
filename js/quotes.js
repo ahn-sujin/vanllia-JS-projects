@@ -54,7 +54,7 @@ const quotesList = [
 ]
 
 const quotesListLength = Math.random() * quotesList.length; 
-const quotesRandom = quotesList[Math.round(quotesListLength)];
+const quotesRandom = quotesList[Math.floor(quotesListLength)];
 
 quote.innerText = quotesRandom.quote;
 author.innerText = quotesRandom.author;
