@@ -119,7 +119,7 @@ loginForm.addEventListener('submit', loginSubmit);
 
 ```
 - 추가/삭제되는 ```hidden``` class명이 반복적으로 나타나기 때문에 변수```HIDDEN_CLASS```로 설정해 준다. 
-   - 💡 ```string```만 포한 된 변수는 **대문자**로 표기한다.
+   - 💡 ```string```만 포함 된 변수는 **대문자**로 표기한다.
 - ```submit``` 이벤트가 발생하면,
    - 1️⃣ ```loginForm```에 ```hidden```class를 추가하여 숨겨준다.
    - 2️⃣ ```greeting```에 나타낼 text를 설정한다.
