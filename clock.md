@@ -63,7 +63,34 @@ setInterval(getClock, 1000);
 <br>
 
 ## padStart
-한 자리 수 숫자를 두 자리로 표현한다. ``` 1 -> 01 ```
+**한 자리** 숫자를 **두 자리로** 표현한다. ``` 1 -> 01 ```
+
+<br>
+
+> clock.js
+```javascript
+const clock = document.querySelector('#clock')
+
+function getClock(){
+    const date = new Date();
+    const hours = date.getHours().padStart(2,'0');
+    const minutes = date.getMinutes().padStart(2,'0');
+    const seconds = date.getSeconds().padStart(2,'0');
+
+    clock.innerText = `${hours}:${minutes}:${seconds}`
+}
+
+setInterval(getClock, 1000);
+
+```
+- **padStart(a,b)** : 앞쪽에 빈공간을 추가한다.
+  - a(첫번째 인자) : 최대 길이 
+  - b(두번째 인자) : 빈공간을 채울 문자
+- **padEnd(a,b)** : 뒷쪽에 빈공간을 추가한다.
+  - a(첫번째 인자) : 최대 길이 
+  - b(두번째 인자) : 빈공간을 채울 문자  
+
+
 
 
 
