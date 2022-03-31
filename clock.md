@@ -43,6 +43,7 @@ function getClock(){
     clock.innerText = `${hours}:${minutes}:${seconds}`
 }
 
+getClock();
 setInterval(getClock, 1000);
 
 
@@ -80,6 +81,7 @@ function getClock(){
     clock.innerText = `${hours}:${minutes}:${seconds}`
 }
 
+getClock();
 setInterval(getClock, 1000);
 
 ```
@@ -88,15 +90,18 @@ setInterval(getClock, 1000);
   - b(두번째 인자) : 빈공간을 채울 문자
 - **padEnd(a,b)** : 뒷쪽에 빈공간을 추가한다.
   - a(첫번째 인자) : 최대 길이 
-  - b(두번째 인자) : 빈공간을 채울 문자  
+  - b(두번째 인자) : 빈공간을 채울 문자 
 
+<br>
 
+### ☝ **padStart(padEnd)** 는 **String에서만 사용 가능**하고 Number에서는 사용이 불가능하다.
 
+```javascript
+const hours = String(date.getHours()).padStart(2,'0');
+const minutes = String(date.getMinutes()).padStart(2,'0');
+const seconds = String(date.getSeconds()).padStart(2,'0')
 
-
-
-
-
-
-
+```
+- Number를 String으로 바꿔서 호출할 때는
+   - ```String()```을 사용해서 해당 부분을 감싸준다.
 
