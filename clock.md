@@ -54,6 +54,9 @@ setInterval(getClock, 1000);
    - ```Date.prototype.getHours``` : 시간 표현(0~23) / 시간을 정수로 반환한다.
    - ```Date.prototype.getMinutes``` : 분 표현(0~59) / 분을 정수로 반환 한다.
    - ```Date.prototype.getSeconds``` : 초 표현(0~59) / 초를 정수로 반환 한다.
+
+<hr>
+
 - **setInterval(a,b)** : 매번(2초마다, 1분마다...) 일어나야하는 무언가를 나타낸다. 
    - a(첫번째 인자) : 실행하고자 하는 함수
    - b(두번째 인자) : 호출되는 함수를 몇 ms로 할지 
