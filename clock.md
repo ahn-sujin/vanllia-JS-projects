@@ -6,5 +6,6 @@
 <br>
 
 ## Date and setInterval
+```Date 객체```, ```Date 메소드```, ```setInterval메소드```를 이용하여 현재 시간을 구현한다. 
 
 
