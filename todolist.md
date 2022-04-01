@@ -178,8 +178,8 @@ toDoForm.addEventListener('submit', handleToDoSubmit);
 ```
 - localstorage에 저장할 list를 담을 배열을 만들어 준다. ```const toDos = []```
 - **하지만, localstorage에는 array를 저장할 수 없다. 오직 string만 가능!**
-   - ``` JSON.stringify()``` : js에서 object나 array를 string으로 바꿔준다.
-   - ``` JSON.parse()``` : js에서 string을 array로 바꿔준다.
+   - ``` JSON.stringify()``` : js에서 object나 **array를 string으로** 바꿔준다.
+   - ``` JSON.parse()``` : js에서 **string을 array로** 바꿔준다.
 
 <br>
 
