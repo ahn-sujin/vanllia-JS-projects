@@ -83,7 +83,50 @@ toDoForm.addEventListener('submit', handleToDoSubmit);
 ## Deleting To Dos
 화면에서 todolist 삭제한다.
 
+<br>
 
+> todo.js
+
+```javascript
+const toDoForm = document.querySelector('#todo-form');
+const toDoInput = toDoForm.querySelector('input');
+const toDoList = document.querySelector('#todo-list');
+
+function deleteToDo(event){
+    const li = event.target.parentElement;
+    li.remove(event.target.parentElement);
+}
+
+function paintToDo(newToDo){
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    span.innerText = newToDo; 
+    const deleteButton = document.createElement('button');
+    deleteButton.innerText = '❌';
+    deleteButton.addEventListener('click', deleteToDo);
+    li.appendChild(span);
+    li.appendChild(deleteButton);
+    toDoList.appendChild(li);
+}
+
+function handleToDoSubmit(event){
+    event.preventDefault();
+    const newTodo = toDoInput.value;
+    toDoInput.value = "";
+    paintToDo(newTodo);
+}
+
+toDoForm.addEventListener('submit', handleToDoSubmit);
+
+```
+- ```event.target.parentElement``` : 어떤 요소에서 이벤트가 발생했는지 알 수 있다. 
+   - ```event.target``` : 어떤 버튼이 클릭 되었는지 알려준다. (클릭된 HTML Element) 
+   
+      ➡ **이벤트가 발생한 요소를 찾고**
+   - ```parentElement``` : 클릭된 HTML Element ```button``` 의 부모 요소를 알 수 있다. 
+
+      ➡ **그 요소의 부모 요소를 찾는다.**
+     
 <br>
 
 ## Saving To Dos (localStorage)
