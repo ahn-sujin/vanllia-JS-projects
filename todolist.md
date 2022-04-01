@@ -311,16 +311,15 @@ if(savedToDos !== null){
 }
 
 ```
-- list를 삭제하기 위해서, 선택된 list가 무엇인지 알아야 하기 때문에 구별을 위해 **id** 값을 부여해준다.
+- **list를 삭제하기 위해서, 선택된 list가 무엇인지 알아야 하기 때문에 구별을 위해 ```id``` 값을 부여해준다.**
    - ```Date.now()``` : 밀리초(1000분의 1초)를 주는 함수, 랜덤한 숫자를 준다.
    -  ```const newTodo = toDoInput.value;``` 는 string 형식
-   -  ```const newTodoObj = {text: newTodo, id: Date.now()} 와 같이 object 형식으로 변경한다.
+   -  ```const newTodoObj = {text: newTodo, id: Date.now()}``` 와 같이 object 형식으로 변경한다.
 
 <hr>
 
-
-
-
-
-
+- 삭제한 list를 localstorage에도 반영하기 위해서, **지우고 싶은 list를 제외한 새로운 array**를 만들어 준다.
+   - ```filter``` : 기존의 array는 그대로 두고, 새로운 array를 만들어 준다. 
+   - ```filter``` 반환값이 **true** : array요소들을 포함한다.
+   - ```filter``` 반환값이 **false** : array요소를 제외하고 새로운 array를 만든다. 
 
