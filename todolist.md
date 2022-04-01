@@ -186,11 +186,140 @@ toDoForm.addEventListener('submit', handleToDoSubmit);
 ## Loading To Dos (localStorage)
 localstorage에 저장된 todolist를 화면에 출력한다.
 
+<br>
+
+> todo.js
+
+```javascript
+const toDoForm = document.querySelector('#todo-form');
+const toDoInput = toDoForm.querySelector('input');
+const toDoList = document.querySelector('#todo-list');
+
+const TODOS_KEY = 'todo';
+
+let toDos = [];
+
+function saveToDo(){
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+}
+
+function deleteToDo(event){
+    const li = event.target.parentElement;
+    li.remove(event.target.parentElement);
+}
+
+function paintToDo(newToDo){
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    span.innerText = newToDo; 
+    const deleteButton = document.createElement('button');
+    deleteButton.innerText = '❌';
+    deleteButton.addEventListener('click', deleteToDo);
+    li.appendChild(span);
+    li.appendChild(deleteButton);
+    toDoList.appendChild(li);
+}
+
+function handleToDoSubmit(event){
+    event.preventDefault();
+    const newTodo = toDoInput.value;
+    toDoInput.value = "";
+    toDos.push(newTodo);
+    paintToDo(newTodo);
+    saveToDo();
+}
+
+toDoForm.addEventListener('submit', handleToDoSubmit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if(savedToDos !== null){
+    const parsedToDos = JSON.parse(savedToDos);
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
+}
+
+```
+- ```forEach``` : array에 있는 각각의 item(li)에 대해서 함수를 실행시킨다.
+- ```toDos``` item들의 배열이 계속 변경됨으로 ```const toDos```에서 ```let toDos```로 바꿔준다.
+- ```toDos```에 localstorage의 값들을 배열로 담아준다.
+- ```parsedToDos```배열에 담긴 요소들 하나하나에 ```paintToDo```를 실행시킨다.
 
 <br>
 
 ## Deleting To Dos (localStorage)
 localstorage에 저장된 todolist를 삭제하고, 화면에서도 삭제시켜준다.
+
+<br>
+
+> todo.js
+
+```javascript
+const toDoForm = document.querySelector('#todo-form');
+const toDoInput = toDoForm.querySelector('input');
+const toDoList = document.querySelector('#todo-list');
+
+const TODOS_KEY =  'todo';
+
+let toDos = [];
+
+function saveToDo(){
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+}
+
+function deleteToDo(event){
+    const li = event.target.parentElement;
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // -> 클릭한 li.id와 다른 toDo.id는 남겨둔다. 
+    li.remove();
+    saveToDo();
+}
+
+function paintToDo(newToDo){
+    const li = document.createElement('li');
+    li.id = newToDo.id;
+    const span = document.createElement('span');
+    span.innerText = newToDo.text; 
+    const deleteButton = document.createElement('button');
+    deleteButton.innerText = '❌';
+    deleteButton.addEventListener('click', deleteToDo);
+    li.appendChild(span);
+    li.appendChild(deleteButton);
+    toDoList.appendChild(li);
+}
+
+function handleToDoSubmit(event){
+    event.preventDefault();
+    const newTodo = toDoInput.value;
+    toDoInput.value = "";
+    const newTodoObj = {
+        text: newTodo, 
+        id: Date.now()
+    }
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
+    saveToDo();
+}
+
+toDoForm.addEventListener('submit', handleToDoSubmit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if(savedToDos !== null){
+    const parsedToDos = JSON.parse(savedToDos);
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
+}
+
+```
+- list를 삭제하기 위해서, 선택된 list가 무엇인지 알아야 하기 때문에 구별을 위해 **id** 값을 부여해준다.
+   - ```Date.now()``` : 밀리초(1000분의 1초)를 주는 함수, 랜덤한 숫자를 준다.
+   -  ```const newTodo = toDoInput.value;``` 는 string 형식
+   -  ```const newTodoObj = {text: newTodo, id: Date.now()} 와 같이 object 형식으로 변경한다.
+
+<hr>
+
+
+
 
 
 
