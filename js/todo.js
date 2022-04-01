@@ -12,7 +12,9 @@ function saveToDo(){
 
 function deleteToDo(event){
     const li = event.target.parentElement;
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // -> 클릭한 li.id와 다른 toDo.id는 남겨둔다. 
     li.remove();
+    saveToDo();
 }
 
 function paintToDo(newToDo){
