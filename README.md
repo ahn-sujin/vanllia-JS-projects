@@ -10,3 +10,5 @@
  3️⃣ **[명언 및 배경 랜덤으로 호출하기](quotes_and_bg.md)**
  
  4️⃣ **[todolist 만들기](todolist.md)**
+
+ 5️⃣ **[weather 호출하기](weather.md)**
