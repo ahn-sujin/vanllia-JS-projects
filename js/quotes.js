@@ -1,6 +1,3 @@
-const quotes = document.querySelector('#quotes');
-const quote = quotes.querySelector('span:first-child');
-const author = quotes.querySelector('span:last-child');
 
 const quotesList = [
     {
@@ -53,8 +50,3 @@ const quotesList = [
     }
 ]
 
-const quotesListLength = Math.random() * quotesList.length; 
-const quotesRandom = quotesList[Math.floor(quotesListLength)];
-
-quote.innerText = quotesRandom.quote;
-author.innerText = quotesRandom.author;
