@@ -3,24 +3,23 @@ const loginInput = loginForm.querySelector('input');
 const loginButton = loginForm.querySelector('button');
 const greeting = document.querySelector('#greeting');
 
-const HIDDEN_CLASS = 'hidden';
-const LOCAL_STORAGE_KEY_NAME = 'username'
-
+const HIDEEN_CLASS = 'hidden';
+const LOCAL_STORAGE_KEY_NAME = 'usename';
 
 function onLoginSubmit(event){
     event.preventDefault();
-    const userName = loginInput.value
-    loginForm.classList.add(HIDDEN_CLASS);
-    localStorage.setItem(LOCAL_STORAGE_KEY_NAME, userName);
+    const userName = loginInput.value;
+    loginForm.classList.add(HIDEEN_CLASS);
+    localStorage.setItem(LOCAL_STORAGE_KEY_NAME,userName);
     paintGreeting(userName);
 }
 
 function paintGreeting(name){
-    greeting.classList.remove(HIDDEN_CLASS);
+    greeting.classList.remove(HIDEEN_CLASS);
     greeting.innerText = `Hello ${name}`;
 }
 
-function activeLoginButton(){
+function loginButtonActive(){
     if(loginInput.value === ''){
         loginButton.disabled = true;
     } else {
@@ -28,13 +27,13 @@ function activeLoginButton(){
     }
 }
 
-const localStorageKey = localStorage.getItem(LOCAL_STORAGE_KEY_NAME);
+const localStorageKey = localStorage.getItem(LOCAL_STORAGE_KEY_NAME)
 if(localStorageKey === null){
-    loginForm.classList.remove(HIDDEN_CLASS);
+    loginForm.classList.remove(HIDEEN_CLASS);
 } else {
-    paintGreeting(localStorageKey)
+    paintGreeting(localStorageKey);
 }
 
 loginForm.addEventListener('submit', onLoginSubmit);
 loginButton.addEventListener('click', onLoginSubmit);
-loginInput.addEventListener('keyup', activeLoginButton);
+loginInput.addEventListener('keyup', loginButtonActive);
