@@ -49,17 +49,33 @@ input[type='number']::-webkit-outer-spin-button {
     display: none;
 }
 .contents{
+    position: relative;
     max-width: 1920px;
     height: 100vh;
     margin: 0 auto;
-    /* background: url(/img/app_bg01.png) no-repeat;
-    background-size: 100% auto; */
+}
+.contents img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
 }
 .contents .inner{
     max-width: 1200px;
     max-height: 100%;
     margin: 0 auto;
     padding-top: 120px;
+}
+.box{
+    background: rgba(255,255,255,0.7);
+    box-shadow: 8px 7px 12px rgba(0,0,0,0.6);
+    border-radius: 35px;
+}
+.box.sm{
+    width: 300px;
+    height: 300px;
+    padding: 30px 50px;
 }
 
 /* ============ login ============ */
@@ -126,16 +142,6 @@ button:disabled{
 }
 
 /* ============ clock ============ */
-.box{
-    background: rgba(255,255,255,0.7);
-    box-shadow: 8px 7px 12px rgba(0,0,0,0.6);
-    border-radius: 35px;
-}
-.box.sm{
-    width: 300px;
-    height: 300px;
-    padding: 30px 50px;
-}
 #clock{
     font-size: 35px;
     font-weight: 700;
