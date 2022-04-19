@@ -49,9 +49,17 @@ input[type='number']::-webkit-outer-spin-button {
     display: none;
 }
 .contents{
-    max-width: 1200px;
+    max-width: 1920px;
     height: 100vh;
     margin: 0 auto;
+    background: url(/img/app_bg01.png) no-repeat;
+    background-size: 100% auto;
+}
+.contents .inner{
+    max-width: 1200px;
+    max-height: 100%;
+    margin: 0 auto;
+    padding-top: 120px;
 }
 
 /* ============ login ============ */
@@ -102,11 +110,16 @@ button{
     border: none;
     outline: none;
     font-weight: 700;
-    background: #f5f5f5;
+    background: #ffa912;
     font-size: 14px;
+    color: #fff;
+}
+button:disabled{
+    background: #f5f5f5;
     color: #999;
 }
-button.active{
-    background: #ffa912;
+#greeting{
+    font-family: 'NanumPen';
+    font-size: 93px;
     color: #fff;
 }

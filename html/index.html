@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-pen.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <title>chromeApp</title>
 </head>
 <body>
-    <div id="login">
+    <div id="login" class="hidden">
         <form>
             <p>What is your name?</p>
             <input required class="default" type="text" placeholder="Your name">
-            <button type="button">login</button>
+            <button type="button" disabled>login</button>
         </form>
     </div>
     <div class="contents">
-        <p id="greeting"></p>
+        <div class="inner">
+            <p id="greeting" class="hidden"></p>
+        </div>
+        
     </div>
     <!-- script -->
     <script src="/js/greetings.js"></script>
