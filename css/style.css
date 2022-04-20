@@ -64,6 +64,42 @@ input[type='number']::-webkit-outer-spin-button {
     height: 300px;
     padding: 30px 50px;
 }
+.box.lg{
+    width: 100%;
+    height: 600px;
+    padding: 30px 50px;
+}
+.top{
+    display: flex;
+    align-items: center;
+}
+.login-area{
+    display: flex;
+    align-items: center;
+}
+.app-area{
+    display: flex;
+}
+.app-area .info-area{
+    display: flex;
+    flex-wrap: wrap;
+    width: 660px;
+}
+.info-area .box.sm{
+    margin-right: 30px;
+}
+.info-area .box.sm:last-of-type{
+    margin-right: 0;
+}
+.info-area .box.lg{
+    margin:30px 30px 0 0;
+}
+.app-area .todo-area{
+    width: calc(100% - 660px);
+}
+.todo-area .box.lg{
+    height: 100%;
+}
 
 /* ============ login ============ */
 #login{
@@ -144,3 +180,20 @@ button:disabled{
     line-height: 70px;
     text-align: center;
 }
+
+/* ============ quotes ============ */
+#quotes{
+    margin-left: 30px;
+    font-family: 'NanumPen';
+    font-size: 25px;
+    color: #fff;
+}
+#quotes > .author{
+    margin-left: 20px;
+}
+#quotes > .author::before,
+#quotes > .author::after{
+    content:'-';
+    display: inline-block;
+}
+
