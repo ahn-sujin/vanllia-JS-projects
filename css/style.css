@@ -49,27 +49,14 @@ input[type='number']::-webkit-outer-spin-button {
     display: none;
 }
 .contents{
-    position: relative;
-    max-width: 1920px;
-    height: 100vh;
-    margin: 0 auto;
-}
-.contents img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-}
-.contents .inner{
-    max-width: 1200px;
+    max-width: 1580px;
     max-height: 100%;
     margin: 0 auto;
-    padding-top: 120px;
+    padding: 120px 40px 0;
 }
 .box{
-    background: rgba(255,255,255,0.7);
-    box-shadow: 8px 7px 12px rgba(0,0,0,0.6);
+    background: rgba(255,255,255,0.6);
+    box-shadow: 8px 7px 12px rgba(0,0,0,0.2);
     border-radius: 35px;
 }
 .box.sm{
@@ -143,7 +130,7 @@ button:disabled{
 
 /* ============ clock ============ */
 #clock{
-    font-size: 35px;
+    font-size: 40px;
     font-weight: 700;
     text-align: center;
 }

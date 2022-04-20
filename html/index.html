@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-pen.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <title>chromeApp</title>
@@ -17,8 +17,14 @@
         </form>
     </div>
     <div class="contents">
-        <div class="inner">
+        <div class="top">
             <p id="greeting" class="hidden"></p>
+            <div id="quotes">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="bottom">
             <div class="box sm">
                 <p id="clock">00:00:00</p>
                 <p id="day"></p>
