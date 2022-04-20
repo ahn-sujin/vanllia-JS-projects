@@ -32,6 +32,8 @@ navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
    - ```success``` : 다 잘됐을 때, 실행할 함수 / GeolocationPosition 객체를 매개변수로 받아서 실행한다.  
    - ```error``` : 에러가 발생했을 때, 실행할 함수 
 
+[자세히](https://github.com/ahn-sujin/TIL/blob/main/javascript/geolacation.md)
+
 <br>
 
 
