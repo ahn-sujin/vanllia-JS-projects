@@ -36,26 +36,24 @@ function getWeatherForecast(url){
                 const date = document.createElement("span");
                 const icon = document.createElement("img");
                 const temp = document.createElement("span");
-                const main = document.createElement("span");
 
                 list.classList.add('forecast-list');
                 date.classList.add('date');
                 icon.classList.add('icon');
                 temp.classList.add('temp');
-                main.classList.add('main');
 
                 forecast.appendChild(list);
                 list.appendChild(date);
                 list.appendChild(icon);
                 list.appendChild(temp);
-                list.appendChild(main);
-                
+
                 today.setDate(today.getDate() + 1);
-                date.innerText = `${today.getMonth() + 1}/${today.getDate()}`;
+                const weekNumber = today.getDay();
+                const weekName = ['일','월','화','수','목','금','토']
+                date.innerText = weekName[weekNumber];
+
                 icon.src = `http://openweathermap.org/img/wn/${forecastData[i].weather[0].icon}.png`;
                 temp.innerText = `${forecastData[i].temp.min.toFixed()}°/${forecastData[i].temp.max.toFixed()}°`;
-                main.innerText = `${forecastData[i].weather[0].main}`;
-
             }
         })
 }

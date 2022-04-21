@@ -113,6 +113,7 @@ input[type='number']::-webkit-outer-spin-button {
     width: 100%; height: 100vh;
     background: rgba(0,0,0,0.7);
     backdrop-filter: blur(17px);
+    z-index: 100;
 }
 #login > form{
     position: absolute; top: 50%; left: 50%;
@@ -275,3 +276,25 @@ button:disabled{
     border-radius: 100%;
     vertical-align: top;  
 }
+
+#forecast{
+    color: #fff;
+}
+
+#forecast > li{
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+#forecast > li:last-of-type{
+    border-bottom: none;
+}
+#forecast > li.title{
+    font-size: 14px;
+}
+#forecast > li.forecast-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
