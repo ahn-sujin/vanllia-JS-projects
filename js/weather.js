@@ -14,10 +14,10 @@ function onGeoOk(position){
         .then((response) => response.json())
         .then((data) => {
             city.innerText = data.name;
-            temp.innerText = data.main.temp;
+            temp.innerText = Math.floor(data.main.temp);
             condition.innerText = data.weather[0].main;
-            highestTemp.innerText = data.main.temp_max;
-            minimumTemp.innerText = data.main.temp_min;
+            highestTemp.innerText = Math.floor(data.main.temp_max);
+            minimumTemp.innerText = Math.floor(data.main.temp_min);
         })
 }
 

@@ -52,12 +52,12 @@ input[type='number']::-webkit-outer-spin-button {
     max-width: 1580px;
     max-height: 100%;
     margin: 0 auto;
-    padding: 120px 40px 0;
+    padding: 90px 40px;
 }
 .box{
-    background: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.3);
     box-shadow: 8px 7px 12px rgba(0,0,0,0.2);
-    border-radius: 35px;
+    border-radius: 70px;
 }
 .box.sm{
     width: 300px;
@@ -68,6 +68,11 @@ input[type='number']::-webkit-outer-spin-button {
     width: 100%;
     height: 600px;
     padding: 30px 50px;
+}
+.box.calender{
+    padding: 0;
+    background: #f5f5f5;
+    overflow: hidden;
 }
 .top{
     display: flex;
@@ -166,18 +171,22 @@ button:disabled{
 
 /* ============ clock ============ */
 #clock{
-    font-size: 40px;
+    font-family: 'NanumPen';
+    font-size: 100px;
     font-weight: 700;
+    color: #fff;
     text-align: center;
 }
 #day{
-    margin-top: 40px;
     font-size: 40px;
     text-align: center;
+    padding: 20px 0 15px;
+    background: #f26462;
+    color: #fff;
 }
 #date{
-    font-size: 70px;
-    line-height: 70px;
+    font-size: 120px;
+    line-height: 168px;
     text-align: center;
 }
 
@@ -197,3 +206,66 @@ button:disabled{
     display: inline-block;
 }
 
+/* ============ weather ============ */
+#weather{
+    position: relative;
+}
+#weather .city{
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 30px;
+}
+#weather .temp{
+    position: relative;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 80px;
+}
+#weather .temp::after{
+    content:'';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border:5px solid #000;
+    border-radius: 100%;
+    vertical-align: top;
+}
+#weather .condition{
+    position: absolute;
+    left: 50px;
+    bottom: 60px;
+    font-size: 20px;
+}
+#weather .highest-temp{
+    position: absolute;
+    left: 50px;
+    bottom: 30px;
+    font-size: 20px;
+}
+#weather .highest-temp::before{
+    content:'최고:';
+    display: inline-block;
+}
+#wather .highest-temp::after{
+    content:'';
+    display: block;
+    width: 5px;
+    height: 5px;
+    border:2px solid #000;
+    border-radius: 100%;
+}
+#weather .minimum-temp{
+    position: absolute;
+    left: 150px;
+    bottom: 30px;
+    font-size: 20px;
+}
+#wather .minimum-temp::after{
+    content:'';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border:2px solid #000;
+    border-radius: 100%;
+}
