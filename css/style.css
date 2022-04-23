@@ -311,11 +311,10 @@ input.default:focus{
 
 /* ============ todolist ============ */
 .todo-area .box{
-    /* background: #f5f5f5; */
+    background: #f5f5f5;
 }
 .todo-area .box h2{
     font-size: 30px;
-    color: #fff;
     margin-bottom: 30px;
 }
 #todo-form{
