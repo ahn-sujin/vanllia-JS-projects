@@ -342,8 +342,8 @@ input.default:focus{
     width: 55px;
     height: 55px;
     font-size: 0;
-    background: #f26462 url(/img/plus_02.png) no-repeat center;
-    background-size: 100% auto;
+    background: #f26462 url(/img/ic_add.png) no-repeat 52% 48%;
+    background-size: 15px auto;
     border-radius: 100%;
     box-shadow: 5px 5px 12px rgb(0 0 0 / 20%);
     margin-left: 30px;
@@ -373,6 +373,10 @@ input.default:focus{
 #todo-list > li > .check.on{
     background: url(/img/check_on.png) no-repeat center;
     background-size: 100% auto;
+}
+#todo-list > li > .check.on + span{
+    opacity: 0.2;
+    text-decoration: line-through;
 }
 #todo-list > li > .delete{
     float: right;
