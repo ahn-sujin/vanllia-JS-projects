@@ -146,11 +146,11 @@ input.default{
     font-weight: 700;
     color: #fff;
     background: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 2px solid #fff;
     text-align: center;;
 }
 input.default:focus{
-    border-bottom: 1px solid #ffa912;
+    border-bottom: 2px solid #f26462;
     transition: 0.5s;
 }
 #login button{
@@ -161,7 +161,7 @@ input.default:focus{
     border: none;
     outline: none;
     font-weight: 700;
-    background: #ffa912;
+    background: #f26462;
     font-size: 14px;
     color: #fff;
 }
@@ -316,14 +316,17 @@ input.default:focus{
     overflow: hidden;
 }
 .todo-area .box h2{
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     padding: 30px 50px;
     font-size: 30px;
     color: #fff;
     background: #f26462;
 }
 #todo-list{
-    padding: 0 30px;
+    max-height: 635px;
+    padding: 0 50px 30px;
+    overflow-y: auto;
+    overflow-x:  hidden;
 }
 #todo-form{
     position: absolute;
@@ -363,25 +366,26 @@ input.default:focus{
     vertical-align: middle;
 }
 #todo-list > li > .check{
+    float: left;
     width: 30px;
-    height: 30px;
+    height: 20px;
     margin-right: 5px;
     font-size: 0;
     background: url(/img/check_off.png) no-repeat center;
     background-size: 100% auto;
 }
-#todo-list > li > .check.on{
+#todo-list > li.on > .check{
     background: url(/img/check_on.png) no-repeat center;
     background-size: 100% auto;
 }
-#todo-list > li > .check.on + span{
+#todo-list > li.on > span{
     opacity: 0.2;
     text-decoration: line-through;
 }
 #todo-list > li > .delete{
     float: right;
     width: 20px;
-    height: 30px;
+    height: 20px;
     margin-right: 5px;
     font-size: 0;
     background: url(/img/delete_02.png) no-repeat center;
