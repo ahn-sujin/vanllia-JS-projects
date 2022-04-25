@@ -18,7 +18,9 @@ function checkToDo(event){
 
 function deleteToDo(event){
     const deleteToDoList = event.target.parentElement;
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(deleteToDoList.id));
     deleteToDoList.remove();
+    saveToDo();
 }
 
 function paintToDo(newToDo){
@@ -32,7 +34,8 @@ function paintToDo(newToDo){
     li.appendChild(buttonCheck);
     li.appendChild(buttonDelete);
 
-    span.innerText = newToDo;
+    li.id = newToDo.id 
+    span.innerText = newToDo.text;
 
     buttonCheck.classList.add('check');
     buttonDelete.classList.add('delete');
@@ -45,8 +48,12 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newToDo = toDoInput.value;
     toDoInput.value = '';
-    toDos.push(newToDo);
-    paintToDo(newToDo);
+    const newToDoObj = {
+        text: newToDo,
+        id: Date.now()
+    }
+    toDos.push(newToDoObj);
+    paintToDo(newToDoObj);
     saveToDo();
 }
 toDoForm.addEventListener('submit', handleToDoSubmit);
@@ -54,7 +61,7 @@ toDoButton.addEventListener('click', handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 if(savedToDos !== null){
-    const parseToDos = JSON.parse(savedToDos);
-    toDos = parseToDos;
-    parseToDos.forEach(paintToDo);
+    const parsedToDos = JSON.parse(savedToDos);
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
 }
