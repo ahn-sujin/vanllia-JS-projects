@@ -1,39 +1,41 @@
-const loginForm = document.querySelector('#login');
-const loginInput = loginForm.querySelector('input');
-const loginButton = loginForm.querySelector('button');
+const loginArea = document.querySelector('#login');
+const loginForm = loginArea.querySelector('form');
+const loginInput = loginArea.querySelector('input');
+const loginButton = loginArea.querySelector('button');
 const greeting = document.querySelector('#greeting');
 
-const HIDEEN_CLASS = 'hidden';
-const LOCAL_STORAGE_KEY_NAME = 'usename';
+const HIDDEN_CLASS = 'hidden';
+const KEY_NAME = 'username';
 
-function onLoginSubmit(event){
+function onLoginsubmit(event){
     event.preventDefault();
     const userName = loginInput.value;
-    loginForm.classList.add(HIDEEN_CLASS);
-    localStorage.setItem(LOCAL_STORAGE_KEY_NAME,userName);
+    loginArea.classList.add(HIDDEN_CLASS);
+    localStorage.setItem(KEY_NAME , userName);
     paintGreeting(userName);
 }
 
 function paintGreeting(name){
-    greeting.classList.remove(HIDEEN_CLASS);
     greeting.innerText = `Hello ${name}`;
 }
 
-function loginButtonActive(){
-    if(loginInput.value === ''){
-        loginButton.disabled = true;
-    } else {
-        loginButton.disabled = false;
-    }
-}
-
-const localStorageKey = localStorage.getItem(LOCAL_STORAGE_KEY_NAME)
+const localStorageKey = localStorage.getItem(KEY_NAME);
 if(localStorageKey === null){
-    loginForm.classList.remove(HIDEEN_CLASS);
+    loginArea.classList.remove(HIDDEN_CLASS);
 } else {
     paintGreeting(localStorageKey);
 }
 
-loginForm.addEventListener('submit', onLoginSubmit);
-loginButton.addEventListener('click', onLoginSubmit);
-loginInput.addEventListener('keyup', loginButtonActive);
+function activeLoginButton(){
+    if(loginInput.value === ''){
+        loginButton.disabled = true
+    } else {
+        loginButton.disabled = false
+    }
+}
+
+loginForm.addEventListener('submit', onLoginsubmit);
+loginButton.addEventListener('click', onLoginsubmit);
+loginInput.addEventListener('keyup', activeLoginButton);
+
+

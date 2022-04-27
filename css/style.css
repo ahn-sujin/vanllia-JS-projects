@@ -57,6 +57,7 @@ button{
     max-height: 100%;
     margin: 0 auto;
     padding: 90px 40px;
+    background: skyblue;
 }
 .box{
     /* background: rgba(255,255,255,0.3); */
