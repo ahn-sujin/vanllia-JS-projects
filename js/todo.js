@@ -36,7 +36,6 @@ function paintToDo(newToDo){
     li.appendChild(checkButton);
     li.appendChild(deleteButton);
     
-
     checkButton.classList.add('check');
     deleteButton.classList.add('delete');
 
