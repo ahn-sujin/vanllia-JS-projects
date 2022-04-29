@@ -91,5 +91,24 @@ fetch('api 주소')
       "age" : 20,
     }
   ```
-- ```response.json()```매서드를 호출하면 JSON데이터를 javascript 객체로 변환시켜준다. 
+- ```response.json()```매서드를 호출하면 JSON데이터를 javascript 객체로 변환시켜준다.
+
+> response.json()을 사용하지 않았을 때
+
+
+
+
+
+- 원하는 정보를 불러올 수 없다.
+
+
+
+
+> response.json()을 사용했을 때
+
+
+
+- promise 형태로 반환한다.
+
+
 
