@@ -74,9 +74,22 @@ navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
 - ```fetch()``` 함수 기본
 ```javascript
 fetch('api 주소')
-  .then(res => res.json())
-  .then(res => {
+  .then(response => response.json())
+  .then(data => {
     // data를 응답 받은 후의 로직
   });
 
 ```
+- JSON(Javascript Object Notation) 이란?
+  - 서버에서 클라이언트로 데이터를 보낼 때 사용하는 양식이다.
+  - 클라이언트가 사용하는 언어에 상관없이 통일된 데이터를 주고 받을 수 있도록 만들어진 텍스트 기반의 데이터 교환 표준이다.
+  - 기본 형태는 JSON object형태로 객체와 비슷한 형태지만 ```key```와 ```value```의 string타입은 ```" "```를 붙여 나타낸다.
+  ```javasciprt
+    {
+      "name": "hong",
+      "job" : [],
+      "age" : 20,
+    }
+  ```
+- ```response.json()```매서드를 호출하면 JSON데이터를 javascript 객체로 변환시켜준다. 
+
