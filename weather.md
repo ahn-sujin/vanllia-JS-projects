@@ -95,18 +95,16 @@ fetch('api 주소')
 
 > response.json()을 사용하지 않았을 때
 
-
-
+![image](img/json사용전.PNG)
 
 
 - 원하는 정보를 불러올 수 없다.
 
-
-
+<br>
 
 > response.json()을 사용했을 때
 
-
+![image](img/json사용후.PNG)
 
 - promise 형태로 반환한다.
 
