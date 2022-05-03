@@ -4,8 +4,14 @@ const todoButton = todoForm.querySelector('button')
 const todolist = document.querySelector('#todo-list');
 
 const STORAGE_KEY = '할 일';
+const CHECK_CLASS_NAME = 'on';
 
 let toDos = [];
+
+function checkToDo(event){
+    const checkToDoList = event.target.parentElement;
+    checkToDoList.classList.toggle('on');
+}
 
 function deleteToDo(event){
     const deleteToDoList = event.target.parentElement;
@@ -32,6 +38,9 @@ function paintToDo(todo){
     li.appendChild(span);
     li.appendChild(checkButton);
     li.appendChild(deleteButton);
+
+    deleteButton.addEventListener('click', deleteToDo);
+    checkButton.addEventListener('click', checkToDo);
 }
 
 function handleToDoSubmit(event){
