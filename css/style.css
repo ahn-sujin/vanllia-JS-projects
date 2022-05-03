@@ -52,12 +52,21 @@ button{
 .hidden{
     display: none;
 }
-.contents{
+#login + .contents{
+    max-width: 1580px;
+    max-height: 100vh;
+    margin: 0 auto;
+    padding: 90px 40px 0 40px;
+    overflow: hidden;
+}
+#login.hidden + .contents{
     max-width: 1580px;
     max-height: 100%;
     margin: 0 auto;
     padding: 90px 40px;
+    overflow: visible;
 }
+
 .box{
     /* background: rgba(255,255,255,0.3); */
     background: rgba(0,0,0,0.2);
@@ -111,7 +120,6 @@ button{
 .todo-area .box.lg{
     height: 100%;
 }
-
 /* ============ login ============ */
 #login{
     position: absolute; top: 0; left: 0;
