@@ -1,66 +1,58 @@
-const toDoForm = document.querySelector('#todo-form');
-const toDoInput = toDoForm.querySelector('input');
-const toDoList = document.querySelector('#todo-list');
+const todoForm = document.querySelector('#todo-form');
+const todoInput = todoForm.querySelector('input');
+const todoButton = todoForm.querySelector('button')
+const todolist = document.querySelector('#todo-list');
 
 const STORAGE_KEY = '할 일';
 
 let toDos = [];
 
-function checkToDo(event){
-    const checkToDoList = event.target.parentElement;
-    checkToDoList.classList.toggle('on');
-}
-
 function deleteToDo(event){
     const deleteToDoList = event.target.parentElement;
-    toDos = toDos.filter((todo) => todo.id !== parseInt(deleteToDoList.id))
+    toDos = toDos.filter((todo) => todo.id !== parseInt(deleteToDoList.id));
     deleteToDoList.remove();
-    saveToDo();
+    saveToDos();
 }
 
-function saveToDo(){
+function saveToDos(){
     localStorage.setItem(STORAGE_KEY, JSON.stringify(toDos));
 }
 
-function paintToDo(newToDo){
+function paintToDo(todo){
     const li = document.createElement('li');
+    li.id = todo.id;
     const span = document.createElement('span');
+    span.innerText = todo.text;
     const checkButton = document.createElement('button');
+    checkButton.classList.add('check'); 
     const deleteButton = document.createElement('button');
-
-    li.id = newToDo.id;
-    span.innerText = newToDo.text;
-   
-    toDoList.appendChild(li);
+    deleteButton.classList.add('delete');
+    
+    todolist.appendChild(li);
     li.appendChild(span);
     li.appendChild(checkButton);
     li.appendChild(deleteButton);
-    
-    checkButton.classList.add('check');
-    deleteButton.classList.add('delete');
-
-    checkButton.addEventListener('click', checkToDo);
-    deleteButton.addEventListener('click', deleteToDo);
 }
 
 function handleToDoSubmit(event){
     event.preventDefault();
-    const newToDo = toDoInput.value;
-    toDoInput.value = '';
+    const todo = todoInput.value;
+    todoInput.value = '';
     const newToDoObj = {
-        text: newToDo,
+        text: todo,
         id: Date.now()
     }
     toDos.push(newToDoObj);
     paintToDo(newToDoObj);
-    saveToDo();
+    saveToDos();
 }
 
-toDoForm.addEventListener('submit', handleToDoSubmit)
+todoForm.addEventListener('submit', handleToDoSubmit);
+todoButton.addEventListener('click', handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(STORAGE_KEY);
 if(savedToDos !== null){
-    const parsedToDos = JSON.parse(savedToDos);
-    toDos = parsedToDos;
-    parsedToDos.forEach(paintToDo);
+    const parseToDos = JSON.parse(savedToDos);
+    toDos = parseToDos;
+    parseToDos.forEach(paintToDo);
 }
