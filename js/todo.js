@@ -11,7 +11,7 @@ let toDos = [];
 function checkToDo(event){
     const checkToDoList = event.target.parentElement;
     checkToDoList.classList.toggle('on');
-}
+}   
 
 function deleteToDo(event){
     const deleteToDoList = event.target.parentElement;
@@ -49,7 +49,8 @@ function handleToDoSubmit(event){
     todoInput.value = '';
     const newToDoObj = {
         text: todo,
-        id: Date.now()
+        id: Date.now(),
+        checked: false
     }
     toDos.push(newToDoObj);
     paintToDo(newToDoObj);
