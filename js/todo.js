@@ -8,11 +8,6 @@ const CHECK_CLASS_NAME = 'on';
 
 let toDos = [];
 
-function checkToDo(event){
-    const checkToDoList = event.target.parentElement;
-    checkToDoList.classList.toggle('on');
-}   
-
 function deleteToDo(event){
     const deleteToDoList = event.target.parentElement;
     toDos = toDos.filter((todo) => todo.id !== parseInt(deleteToDoList.id));
@@ -27,20 +22,27 @@ function saveToDos(){
 function paintToDo(todo){
     const li = document.createElement('li');
     li.id = todo.id;
+
     const span = document.createElement('span');
-    span.innerText = todo.text;
-    const checkButton = document.createElement('button');
-    checkButton.classList.add('check'); 
+
+    const input = document.createElement('input');
+    input.type="checkbox";
+    input.id = `check${todo.id}`;
+
+    const label = document.createElement('label');
+    label.innerText = todo.text;
+    label.htmlFor = `check${todo.id}`;
+
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
     
     todolist.appendChild(li);
     li.appendChild(span);
-    li.appendChild(checkButton);
+    span.appendChild(input);
+    span.appendChild(label);
     li.appendChild(deleteButton);
 
     deleteButton.addEventListener('click', deleteToDo);
-    checkButton.addEventListener('click', checkToDo);
 }
 
 function handleToDoSubmit(event){
@@ -49,8 +51,7 @@ function handleToDoSubmit(event){
     todoInput.value = '';
     const newToDoObj = {
         text: todo,
-        id: Date.now(),
-        checked: false
+        id: Date.now()
     }
     toDos.push(newToDoObj);
     paintToDo(newToDoObj);
