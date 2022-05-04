@@ -8,6 +8,25 @@ const CHECK_CLASS_NAME = 'on';
 
 let toDos = [];
 
+const savedToDos = localStorage.getItem(STORAGE_KEY);
+const parseToDos = JSON.parse(savedToDos);
+console.log(parseToDos);
+
+function checkToDo(event){
+    const checkToDoList = event.target;
+    // console.log(checkToDoList.checked);
+    parseToDos.forEach((obj, index) => {
+        if(obj.id === parseInt(checkToDoList.value)){
+            if(checkToDoList.checked){
+                toDos[index].check = true;
+            } else {
+                toDos[index].check = false;
+            }
+        }
+    });
+    saveToDos();
+}
+
 function deleteToDo(event){
     const deleteToDoList = event.target.parentElement;
     toDos = toDos.filter((todo) => todo.id !== parseInt(deleteToDoList.id));
@@ -26,8 +45,13 @@ function paintToDo(todo){
     const span = document.createElement('span');
 
     const input = document.createElement('input');
+    input.classList.add('check');
     input.type="checkbox";
     input.id = `check${todo.id}`;
+    input.value = todo.id;
+    if(todo.done){
+        input.checked = true;
+    }
 
     const label = document.createElement('label');
     label.innerText = todo.text;
@@ -43,6 +67,10 @@ function paintToDo(todo){
     li.appendChild(deleteButton);
 
     deleteButton.addEventListener('click', deleteToDo);
+    const checkBox = document.querySelectorAll('.check');
+    checkBox.forEach((checkbox) => {
+        checkbox.addEventListener('change', checkToDo);
+    })
 }
 
 function handleToDoSubmit(event){
@@ -51,7 +79,8 @@ function handleToDoSubmit(event){
     todoInput.value = '';
     const newToDoObj = {
         text: todo,
-        id: Date.now()
+        id: Date.now(),
+        check: false
     }
     toDos.push(newToDoObj);
     paintToDo(newToDoObj);
@@ -61,9 +90,7 @@ function handleToDoSubmit(event){
 todoForm.addEventListener('submit', handleToDoSubmit);
 todoButton.addEventListener('click', handleToDoSubmit);
 
-const savedToDos = localStorage.getItem(STORAGE_KEY);
 if(savedToDos !== null){
-    const parseToDos = JSON.parse(savedToDos);
     toDos = parseToDos;
     parseToDos.forEach(paintToDo);
 }
