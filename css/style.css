@@ -410,7 +410,6 @@ input.default:focus{
     color: rgba(0,0,0,0.2);
 }
 
-
 #todo-list > li > .delete{
     float: right;
     width: 20px;
@@ -419,5 +418,14 @@ input.default:focus{
     font-size: 0;
     background: url(../img/delete_02.png) no-repeat center;
     background-size: 100% auto;
+}
+
+.date-written,
+.time-written{
+    float: right;
+    padding-right: 15px;
+    font-size: 14px;
+    color: #999;
+    line-height: 20px;
 }
 

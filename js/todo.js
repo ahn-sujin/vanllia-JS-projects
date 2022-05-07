@@ -59,12 +59,29 @@ function paintToDo(todo){
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
-    
+
+    const timeWritten = document.createElement('span');
+    timeWritten.classList.add('time-written');
+    const DATE = new Date(); 
+    const getHours = String(DATE.getHours()).padStart(2,'0');
+    const getMinutes = String(DATE.getMinutes()).padStart(2,'0');
+    const getSeconds = String(DATE.getSeconds()).padStart(2,'0');
+    timeWritten.innerText =  `작성시간: ${getHours}:${getMinutes}:${getSeconds}`;
+
+    const dateWritten = document.createElement('span');
+    dateWritten.classList.add('date-written');
+    const getYear = DATE.getFullYear();
+    const getMonth = String(DATE.getMonth()).padStart(2,'0');
+    const getDate = String(DATE.getDate()).padStart(2,'0');
+    dateWritten.innerText = `작성일: ${getYear}.${getMonth}.${getDate}`;
+
     todolist.appendChild(li);
     li.appendChild(span);
     span.appendChild(input);
     span.appendChild(label);
     li.appendChild(deleteButton);
+    li.appendChild(timeWritten);
+    li.appendChild(dateWritten);
 
     deleteButton.addEventListener('click', deleteToDo);
     const checkBox = document.querySelectorAll('.check');
