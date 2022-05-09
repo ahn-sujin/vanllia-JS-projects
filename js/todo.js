@@ -7,14 +7,11 @@ const STORAGE_KEY = '할 일';
 const CHECK_CLASS_NAME = 'on';
 
 let toDos = [];
-
 const savedToDos = localStorage.getItem(STORAGE_KEY);
-const parseToDos = JSON.parse(savedToDos);
-console.log(parseToDos);
 
 function checkToDo(event){
     const checkToDoList = event.target;
-    // console.log(checkToDoList.checked);
+    let parseToDos = JSON.parse(savedToDos);
     parseToDos.forEach((obj, index) => {
         if(obj.id === parseInt(checkToDoList.value)){
             if(checkToDoList.checked){
@@ -24,17 +21,17 @@ function checkToDo(event){
             }
         }
     });
-    saveToDos();
+    saveToDo();
 }
 
 function deleteToDo(event){
     const deleteToDoList = event.target.parentElement;
     toDos = toDos.filter((todo) => todo.id !== parseInt(deleteToDoList.id));
     deleteToDoList.remove();
-    saveToDos();
+    saveToDo();
 }
 
-function saveToDos(){
+function saveToDo(){
     localStorage.setItem(STORAGE_KEY, JSON.stringify(toDos));
 }
 
@@ -49,7 +46,7 @@ function paintToDo(todo){
     input.type="checkbox";
     input.id = `check${todo.id}`;
     input.value = todo.id;
-    if(todo.done){
+    if(todo.check){
         input.checked = true;
     }
 
@@ -84,8 +81,8 @@ function paintToDo(todo){
     // li.appendChild(dateWritten);
 
     deleteButton.addEventListener('click', deleteToDo);
-    const checkBox = document.querySelectorAll('.check');
-    checkBox.forEach((checkbox) => {
+    const toDoCheckBox = document.querySelectorAll('.check');
+    toDoCheckBox.forEach((checkbox) => {
         checkbox.addEventListener('change', checkToDo);
     })
 }
@@ -101,13 +98,13 @@ function handleToDoSubmit(event){
     }
     toDos.push(newToDoObj);
     paintToDo(newToDoObj);
-    saveToDos();
+    saveToDo();
 }
 
 todoForm.addEventListener('submit', handleToDoSubmit);
 todoButton.addEventListener('click', handleToDoSubmit);
 
 if(savedToDos !== null){
-    toDos = parseToDos;
-    parseToDos.forEach(paintToDo);
+    toDos = JSON.parse(savedToDos);
+    toDos.forEach(paintToDo);
 }
