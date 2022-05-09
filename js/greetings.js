@@ -16,7 +16,7 @@ function onLoginsubmit(event){
 }
 
 function paintGreeting(name){
-    greeting.innerText = `Hello ${name}`;
+    greeting.innerText = `오늘 하루도 힘내라 ${name}`;
 }
 
 const localStorageKey = localStorage.getItem(KEY_NAME);
