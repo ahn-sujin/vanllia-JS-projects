@@ -9,6 +9,15 @@ const CHECK_CLASS_NAME = 'on';
 let toDos = [];
 const savedToDos = localStorage.getItem(STORAGE_KEY);
 
+function taskToDo(){
+    const todoHeader = document.querySelector('.todo-header');
+    const task = todoHeader.querySelector('span');
+    const allTask = toDos.length;
+
+    task.innerText = `/${allTask}`;
+    
+}
+
 function checkToDo(event){
     const checkToDoList = event.target;
     let parseToDos = JSON.parse(savedToDos);
@@ -28,7 +37,11 @@ function deleteToDo(event){
     const deleteToDoList = event.target.parentElement;
     toDos = toDos.filter((todo) => todo.id !== parseInt(deleteToDoList.id));
     deleteToDoList.remove();
+    console.log(toDos.length);
+    // console.log(toDos.length);
+    taskToDo();
     saveToDo();
+    // console.log(deleteToDoList);
 }
 
 function saveToDo(){
@@ -85,6 +98,7 @@ function paintToDo(todo){
     toDoCheckBox.forEach((checkbox) => {
         checkbox.addEventListener('change', checkToDo);
     })
+    taskToDo();
 }
 
 function handleToDoSubmit(event){

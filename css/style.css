@@ -323,12 +323,20 @@ input.default:focus{
     padding: 0;
     overflow: hidden;
 }
-.todo-area .box h2{
+.todo-header{
     margin-bottom: 50px;
     padding: 30px 50px;
+    background: #f26462;
+}
+.todo-header > p{
     font-size: 30px;
     color: #fff;
-    background: #f26462;
+    text-align: center;
+}
+.todo-header > p > span{
+    font-size: 35px;
+    font-weight: 700;
+    margin: 0 10px;
 }
 #todo-list{
     max-height: 635px;
@@ -406,7 +414,7 @@ input.default:focus{
     background-size: 100% auto;   
 }
 #todo-list > li > span > input:checked + label{
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
     color: rgba(0,0,0,0.2);
 }
 
