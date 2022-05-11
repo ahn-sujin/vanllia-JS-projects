@@ -13,9 +13,8 @@ function taskToDo(){
     const todoHeader = document.querySelector('.todo-header');
     const task = todoHeader.querySelector('span');
     const allTask = toDos.length;
-
-    task.innerText = `/${allTask}`;
-    
+    const checkTask = toDos.filter((todo) => todo.check === false).length;
+    task.innerText = `${checkTask}/${allTask}`;    
 }
 
 function checkToDo(event){
@@ -30,6 +29,7 @@ function checkToDo(event){
             }
         }
     });
+    taskToDo();
     saveToDo();
 }
 
