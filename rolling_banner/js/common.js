@@ -13,6 +13,7 @@ function move(){
         listBox.appendChild(firstList);
         mleft = 0;
     }
+    
 
 
 }
