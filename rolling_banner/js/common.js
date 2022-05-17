@@ -28,3 +28,9 @@ function betweenRollCallback(d, roller) {
     }
 }
 
+function stop(){
+    clearInterval(originalID);
+    clearInterval(cloneID);
+}
+
+roller.addEventListener('mouseover', stop);
