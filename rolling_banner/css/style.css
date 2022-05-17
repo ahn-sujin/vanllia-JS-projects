@@ -26,35 +26,3 @@ ol,ul,li{
 .roller > ul > li {
 	padding-right: 30px;
 }
-
-/* 애니메이션 */
-/* .roller.original{
-    animation: 33s linear 0s infinite normal forwards running rollingleft1;
-}
-.roller.clone{
-    animation: 33s linear 0s infinite normal none running rollingleft2;
-} */
-@keyframes rollingleft1 { /* 원본용 */
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(-100%);
-    }
-    50.01%{
-        transform: translateX(100%);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
-
-@keyframes rollingleft2 { /* 클론용 */
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-200%);
-    }
-}
-
