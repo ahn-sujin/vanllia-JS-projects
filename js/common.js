@@ -8,8 +8,8 @@ rollerWrap.appendChild(clone);
 const originalRoller = document.querySelector('#roller1')
 const cloneRoller = document.querySelector('#roller2')
 const rollerWidth = document.querySelector('.roller ul').offsetWidth;
-originalRoller.style.left = '0px';
-cloneRoller.style.left = rollerWidth + 'px';
+originalRoller.style.left = `0px`;
+cloneRoller.style.left = `${rollerWidth}px`;
 
 let BETWEEN_DISTANCE = 1;
 
@@ -20,7 +20,7 @@ function betweenRollCallback(distance, item) {
     const location = parseInt(item.style.left);
     item.style.left = (location - distance) + 'px';
     if (rollerWidth + (location - distance) <= 0) {
-        item.style.left = rollerWidth + 'px';
+        item.style.left = `${rollerWidth}px`;
     }
 }
 
