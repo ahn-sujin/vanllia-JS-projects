@@ -95,9 +95,27 @@ ol,ul,li{
 
 <br>
 
-### 스크립트 구현하기
+### 클론 배너 생성
 
+> javascript
 
+```javascript
+const rollerWrap = document.querySelector('.wrap');
+const roller = document.querySelector('.roller');
+roller.id = 'roller1';
+const clone = roller.cloneNode(true);
+clone.id = 'roller2';
+rollerWrap.appendChild(clone);
+
+const originalRoller = document.querySelector('#roller1')
+const cloneRoller = document.querySelector('#roller2')
+
+const rollerWidth = document.querySelector('.roller ul').offsetWidth;
+
+originalRoller.style.left = `0px`;
+cloneRoller.style.left = `${rollerWidth}px`;
+
+```
 
 
 
