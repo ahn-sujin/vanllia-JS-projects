@@ -13,6 +13,9 @@ cloneRoller.style.left = rollerWidth + 'px';
 
 let BETWEEN_DISTANCE = 1;
 
+let originalRolling = setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, originalRoller);
+let cloneRolling =  setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, cloneRoller);
+
 function betweenRollCallback(distance, item) {
     const location = parseInt(item.style.left);
     item.style.left = (location - distance) + 'px';
@@ -21,5 +24,15 @@ function betweenRollCallback(distance, item) {
     }
 }
 
-setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, originalRoller);
-setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, cloneRoller);
+function stopRolling(){
+    clearInterval(originalRolling);
+    clearInterval(cloneRolling);
+}
+
+function restartRolling(){
+    originalRolling = setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, originalRoller);
+    cloneRolling =  setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, cloneRoller);
+}
+
+roller.addEventListener('mouseover', stopRolling);
+roller.addEventListener('mouseout', restartRolling);
