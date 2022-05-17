@@ -99,7 +99,7 @@ ol,ul,li{
 
 ## 클론 배너 생성
 
-롤링 배너의 **복제본을 만들고**, 원본 배너와 복제 배너의 **위치**를 잡아준다.
+- 롤링 배너의 **복제본을 만들고**, 원본 배너와 복제 배너의 **위치**를 잡아준다.
 
 <br>
 
@@ -165,13 +165,14 @@ function betweenRollCallback(distance, item) {
   - c : a함수에 넘어갈 인자
   - d : a함수에 넘어갈 인자
 - ```betweenRollCallback``` 콜백함수의 역할
-  - 배너의 ```left```값을 왼쪽으로 점점 이동 시킨다. ```item.style.left = (location - distance) + 'px'```
-  - 그리고 배너가 완전히 왼쪽 바깥으로 벗어나게 되면 ```if (rollerWidth + (location - distance) <= 0)``` 오른쪽 바깥쪽으로 위치를 옮겨준다.``` item.style.left = `${rollerWidth}px`;```
+  - 배너의 ```left```값을 왼쪽으로 점점 이동 시킨다.➡```item.style.left = (location - distance) + 'px'```
+  - 그리고 배너가 완전히 왼쪽 바깥으로 벗어나게 되면 ➡```if (rollerWidth + (location - distance) <= 0)``` 오른쪽 바깥쪽으로 위치를 옮겨준다.➡``` item.style.left = `${rollerWidth}px`;```
 
 
 <br>
 
 ## mouserover시 롤링 정지 및 재시작
+- 정해진 영역에 mouseover되면 롤링이 멈췄다가 mouseout되면 다시 롤링 될 수 있도록 한다.
 
 <br>
 
@@ -193,8 +194,25 @@ roller.addEventListener('mouseout', restartRolling);
 
 
 ```
+### setInterval 중단/재시작 방법
+- 1️⃣ setInterval()함수의 반환값을 변수에 할당하여 반복 시작
+    
+  ```let 변수 = setInterval(콜백함수, 시간);```
+- 2️⃣ clearInterval(변수)로 반복 중단
+    
+  ```clearInterval(변수)```
+- 3️⃣ setInterval()함수의 반환값을 변수에 재할당하여 재시작
+    
+  ```변수 = setInterval(콜백함수, 시간);```
 
 
+<br>
+
+
+#### 참고
+https://blogpack.tistory.com/1120
+
+https://velog.io/@effort_jk/setInterval-clearInterval-%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%95%A8%EC%88%98-%EB%B0%98%EB%B3%B5-%EC%A4%91%EB%8B%A8-%EC%9E%AC%EC%8B%9C%EC%9E%91
 
 
 
