@@ -4,6 +4,9 @@
 
 ![image](images/rollingbanner.gif)
 
+<br>
+
+[결과 보기](https://ahn-sujin.github.io/rolling_banner/html/index.html)
 
 
 <br>
