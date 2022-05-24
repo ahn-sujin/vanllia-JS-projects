@@ -4,6 +4,9 @@
 
 ![image](images/rollingbanner.gif)
 
+<br>
+
+[결과 보기](https://ahn-sujin.github.io/rolling_banner/html/index.html)
 
 
 <br>
@@ -208,6 +211,15 @@ roller.addEventListener('mouseout', restartRolling);
 
 <br>
 
+
+## 💥문제점 - 오류
+
+1️⃣ 처음 접속시 원본 배너와 복제본 배너가 겹쳐져서 보이는 현상이 나타남 (새로고침하면 없어짐)
+
+2️⃣ 복제본 배너에 mouseover시 롤링이 멈추지 않음 ```EventListener```가 적용되지 않음
+
+
+<br>
 
 #### 참고
 https://blogpack.tistory.com/1120
