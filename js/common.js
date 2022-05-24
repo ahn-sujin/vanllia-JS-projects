@@ -8,31 +8,38 @@ rollerWrap.appendChild(clone);
 const originalRoller = document.querySelector('#roller1')
 const cloneRoller = document.querySelector('#roller2')
 const rollerWidth = document.querySelector('.roller ul').offsetWidth;
+
 originalRoller.style.left = `0px`;
 cloneRoller.style.left = `${rollerWidth}px`;
 
-let BETWEEN_DISTANCE = 1;
+roller.classList.add('original');
+clone.classList.add('clone');
 
-let originalRolling = setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, originalRoller);
-let cloneRolling =  setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, cloneRoller);
 
-function betweenRollCallback(distance, item) {
-    const location = parseInt(item.style.left);
-    item.style.left = (location - distance) + 'px';
-    if (rollerWidth + (location - distance) <= 0) {
-        item.style.left = `${rollerWidth}px`;
-    }
-}
 
-function stopRolling(){
-    clearInterval(originalRolling);
-    clearInterval(cloneRolling);
-}
 
-function restartRolling(){
-    originalRolling = setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, originalRoller);
-    cloneRolling =  setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, cloneRoller);
-}
+// let BETWEEN_DISTANCE = 1;
 
-roller.addEventListener('mouseover', stopRolling);
-roller.addEventListener('mouseout', restartRolling);
+// let originalRolling = setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, originalRoller);
+// let cloneRolling =  setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, cloneRoller);
+
+// function betweenRollCallback(distance, item) {
+//     const location = parseInt(item.style.left);
+//     item.style.left = (location - distance) + 'px';
+//     if (rollerWidth + (location - distance) <= 0) {
+//         item.style.left = `${rollerWidth}px`;
+//     }
+// }
+
+// function stopRolling(){
+//     clearInterval(originalRolling);
+//     clearInterval(cloneRolling);
+// }
+
+// function restartRolling(){
+//     originalRolling = setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, originalRoller);
+//     cloneRolling =  setInterval(betweenRollCallback, 10, BETWEEN_DISTANCE, cloneRoller);
+// }
+
+// roller.addEventListener('mouseover', stopRolling);
+// roller.addEventListener('mouseout', restartRolling);
