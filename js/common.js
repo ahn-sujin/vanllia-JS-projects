@@ -2,18 +2,18 @@
 const rollerWrap = document.querySelector('.wrap');
 const roller = document.querySelector('.roller');
 roller.id = 'roller1';
-const clone = roller.cloneNode(true);
-clone.id = 'roller2';
-rollerWrap.appendChild(clone);
+// const clone = roller.cloneNode(true);
+// clone.id = 'roller2';
+// rollerWrap.appendChild(clone);
 const originalRoller = document.querySelector('#roller1')
-const cloneRoller = document.querySelector('#roller2')
+// const cloneRoller = document.querySelector('#roller2')
 const rollerWidth = document.querySelector('.roller ul').offsetWidth;
 
 originalRoller.style.left = `0px`;
-cloneRoller.style.left = `${rollerWidth}px`;
+// cloneRoller.style.left = `${rollerWidth}px`;
 
 roller.classList.add('original');
-clone.classList.add('clone');
+// clone.classList.add('clone');
 
 
 

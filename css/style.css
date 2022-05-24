@@ -28,13 +28,14 @@ ol,ul,li{
 }
 
 /* 애니메이션 */
-.roller.original{
+/* .roller.original{
     animation: 33s linear 0s infinite normal forwards running rollingleft1;
 }
 .roller.clone{
     animation: 33s linear 0s infinite normal none running rollingleft2;
-}
-@keyframes rollingleft1 { /* 원본용 */
+} */
+/* 원본용 */
+/* @keyframes rollingleft1 { 
     0% {
         transform: translateX(0);
     }
@@ -47,12 +48,13 @@ ol,ul,li{
     100%{
         transform: translateX(0);
     }
-}
-@keyframes rollingleft2 { /* 클론용 */
+} */
+/* 클론용 */
+/* @keyframes rollingleft2 { 
     0% {
         transform: translateX(0);
     }
     100% {
         transform: translateX(-200%);
     }
-}
+} */
