@@ -19,4 +19,4 @@
  <br>
  
  ## ✨내가 만든 크롬앱
- [![image](img/app.PNG)](https://ahn-sujin.github.io/projects/html/index.html)
+ [![image](img/app.PNG)](https://ahn-sujin.github.io/vanllia-JS-projects/html/index.html)
